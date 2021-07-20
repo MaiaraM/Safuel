@@ -12,10 +12,7 @@ jobs:
 
     steps:
       - uses: subosito/flutter-action@v1.5.3
-      
-      - name: Go to main Direction
-        run: cd ../../
-        
+
       - name: Install dependencies
         run: flutter pub get
 
@@ -24,3 +21,16 @@ jobs:
 
       - name: Run tests
         run: flutter test
+
+
+
+#      - step: &tag
+#          name: Tag version
+#          image: atlassian/default-image:2
+#          script:
+#            - echo "Made a change in build ${BITBUCKET_BUILD_NUMBER}"
+#            - file=$(cat pubspec.yaml)
+#            - VERSION_APP=$(echo $file | sed -ne 's/[^0-9]*\(\([0-9]\.\)\{0,4\}[0-9][^.]\).*/\1/p')
+#            - echo "Building version $VERSION_APP"
+#            - git tag $VERSION_APP ${BITBUCKET_COMMIT}
+#            - git push origin --tags

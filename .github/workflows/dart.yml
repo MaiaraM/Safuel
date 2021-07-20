@@ -13,8 +13,6 @@ jobs:
     steps:
       - uses: subosito/flutter-action@v1.5.3
 
-      - name: Go to main Direction
-
       - name: Install dependencies
         run: flutter pub get
 
